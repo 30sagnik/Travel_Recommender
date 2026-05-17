@@ -81,6 +81,11 @@ def recommendation_page():
     return render_template("recommendation.html", predicted_popularity=None, recommended_destinations=None)
 
 @app.route("/recommend", methods=["POST"])
+
+@app.route("/api")
+def index():
+    return "Hello, API"
+    
 def recommend():
     df = load_destinations()
     form = request.form
